@@ -1,0 +1,8 @@
+PaddlePaddle + Jupyter Notebook 作业运行完成
+Python: 3.12.13
+PaddlePaddle: 3.3.0
+Device: cpu
+Final loss: 0.064510
+Learned weight: 2.9918
+Learned bias: 2.0124
+Output directory: /home/wxy/paddle_homework_run/week3_paddle_jupyter_outputs

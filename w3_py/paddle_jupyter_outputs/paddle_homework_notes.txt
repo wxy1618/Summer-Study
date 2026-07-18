@@ -1,0 +1,5 @@
+第三周 Jupyter/PaddlePaddle 作业
+1. 使用 Miniconda 创建 paddle-cpu 环境
+2. 在 Ubuntu 虚拟机中启动 Jupyter Notebook
+3. 在 Windows 浏览器中访问 Notebook 页面
+4. 使用 PaddlePaddle 完成张量、自动求导和简单训练实验
