@@ -1,0 +1,27 @@
+{
+  "mode": "dry_run",
+  "model_name": "distilbert-base-uncased",
+  "task": "extractive_question_answering",
+  "examples": 3,
+  "pipeline": [
+    "Load AutoTokenizer and AutoModelForQuestionAnswering.",
+    "Tokenize question/context pairs with truncation='only_second'.",
+    "Use offset_mapping to align answer_start and answer_end labels.",
+    "Train with Trainer for a small number of epochs.",
+    "Decode start/end logits into answer spans.",
+    "Evaluate exact match and token-level overlap on validation data."
+  ],
+  "sample": {
+    "id": "qa_lora",
+    "question": "What does LoRA train?",
+    "context": "LoRA freezes base model weights and trains low-rank adapter matrices instead of updating all original weights.",
+    "answers": {
+      "text": [
+        "low-rank adapter matrices"
+      ],
+      "answer_start": [
+        43
+      ]
+    }
+  }
+}

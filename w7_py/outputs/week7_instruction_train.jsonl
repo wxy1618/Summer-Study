@@ -1,0 +1,4 @@
+{"instruction": "列出 HuggingFace 文本分类微调的主要流程。", "input": "至少包含 tokenizer、模型和评价指标。", "output": "首先整理 text 与 label 字段，然后用 tokenizer 生成模型输入。接着加载 AutoModelForSequenceClassification 并设置标签数。训练时定义 accuracy 或 F1 等指标，最后保存模型与实验记录。", "category": "workflow_generation"}
+{"instruction": "把文本分类任务改写为 T5 text-to-text 格式。", "input": "原任务：判断句子 The answer is grounded 的标签。", "output": "输入可以写为：sst2 sentence: The answer is grounded。输出写为文本标签：positive。", "category": "format_conversion"}
+{"instruction": "给出一个离线 RAG 系统的核心步骤。", "input": "面向课程资料问答场景。", "output": "先收集课程文档并按语义边界切分，再为每个片段建立检索索引。用户提问后召回相关片段，把证据与问题共同放入 prompt。最后由模型基于证据回答，并记录来源与检索得分。", "category": "workflow_generation"}
+{"instruction": "判断下面说法是否准确，并给出理由。", "input": "说法：RAG 会修改大语言模型的全部参数。", "output": "不准确。RAG 通常在推理阶段检索外部知识并拼接上下文，它不需要更新模型参数；修改参数属于微调或继续训练范畴。", "category": "error_correction"}

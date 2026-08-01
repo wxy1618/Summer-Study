@@ -1,0 +1,36 @@
+{
+  "mode": "dry_run",
+  "model_name": "distilbert-base-uncased",
+  "task": "sequence_classification",
+  "train_examples": 6,
+  "labels": {
+    "rag": 0,
+    "fine_tuning": 1,
+    "model_principle": 2
+  },
+  "id_to_label": {
+    "0": "rag",
+    "1": "fine_tuning",
+    "2": "model_principle"
+  },
+  "pipeline": [
+    "Load AutoTokenizer.",
+    "Tokenize text with padding and truncation.",
+    "Load AutoModelForSequenceClassification.",
+    "Train with Trainer for a small number of epochs.",
+    "Evaluate accuracy on a held-out split.",
+    "Save model, tokenizer, and metrics."
+  ],
+  "sample": [
+    {
+      "text": "RAG retrieves external documents before generation.",
+      "label": 0,
+      "label_name": "rag"
+    },
+    {
+      "text": "A vector store helps retrieve evidence for user questions.",
+      "label": 0,
+      "label_name": "rag"
+    }
+  ]
+}

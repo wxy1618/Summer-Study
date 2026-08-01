@@ -1,0 +1,5 @@
+{"task_name": "sentiment", "prefix": "sst2 sentence:", "input_text": "sst2 sentence: The lecture makes parameter efficient fine tuning clear.", "target_text": "positive"}
+{"task_name": "sentiment", "prefix": "sst2 sentence:", "input_text": "sst2 sentence: The experiment result is unstable and hard to reproduce.", "target_text": "negative"}
+{"task_name": "summarization", "prefix": "summarize:", "input_text": "summarize: Retrieval augmented generation first searches external documents and then asks a language model to answer with grounded evidence.", "target_text": "RAG answers questions with retrieved evidence."}
+{"task_name": "question_answering", "prefix": "question:", "input_text": "question: What does LoRA train? context: LoRA freezes the base model weights and trains low-rank adapter matrices.", "target_text": "low-rank adapter matrices"}
+{"task_name": "translation", "prefix": "translate English to Chinese:", "input_text": "translate English to Chinese: Instruction tuning teaches a model to follow user requests.", "target_text": "指令微调让模型学习遵循用户请求。"}

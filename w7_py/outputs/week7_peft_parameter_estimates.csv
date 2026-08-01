@@ -1,0 +1,6 @@
+method,trainable_parameters,percent_of_full,fp16_megabytes,note
+Full fine-tuning,108375552,100.0,206.71,Update all model weights.
+Prompt Tuning,49152,0.045353,0.094,Train input soft prompt only.
+P-Tuning v2,1179648,1.088482,2.25,Train deep prompts across layers.
+LoRA q/v,294912,0.27212,0.562,Train rank-8 adapters on q and v.
+LoRA q/k/v/o,589824,0.544241,1.125,Train rank-8 adapters on q/k/v/o.

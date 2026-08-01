@@ -1,0 +1,2 @@
+{"instruction": "说明指令微调和预训练的差异。", "input": "要求从训练目标和数据形式两个角度回答。", "output": "预训练主要使用大规模无标注文本学习下一个 token 预测。指令微调使用 instruction-input-output 样本，让模型学习按照用户意图完成具体任务。", "category": "concept_comparison"}
+{"instruction": "解释 LoRA 为什么属于参数高效微调方法。", "input": "要求用三句话回答，并说明低秩矩阵的作用。", "output": "LoRA 冻结基座模型的大部分权重，只训练额外加入的低秩矩阵。低秩矩阵用于近似任务相关的权重更新，因此显著减少可训练参数。这种方式降低显存与存储成本，同时保留基座模型的通用能力。", "category": "concept_explanation"}

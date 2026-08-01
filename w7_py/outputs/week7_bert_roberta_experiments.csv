@@ -1,0 +1,25 @@
+experiment_id,model_family,checkpoint,task,tuning_strategy,learning_rate,epochs,batch_size,primary_metric,notes
+w7_exp_01,BERT,bert-base-uncased,text_classification,full_finetune,2e-05,2,8,macro_f1,Reference setting that updates all trainable weights.
+w7_exp_02,BERT,bert-base-uncased,text_classification,full_finetune,5e-05,2,8,macro_f1,Reference setting that updates all trainable weights.
+w7_exp_03,BERT,bert-base-uncased,text_classification,freeze_encoder_head_only,2e-05,2,8,macro_f1,Tests whether task head alone is enough on small data.
+w7_exp_04,BERT,bert-base-uncased,text_classification,freeze_encoder_head_only,5e-05,2,8,macro_f1,Tests whether task head alone is enough on small data.
+w7_exp_05,BERT,bert-base-uncased,text_classification,lora_adapter_optional,2e-05,2,8,macro_f1,Requires PEFT; compares adapter efficiency with full tuning.
+w7_exp_06,BERT,bert-base-uncased,text_classification,lora_adapter_optional,5e-05,2,8,macro_f1,Requires PEFT; compares adapter efficiency with full tuning.
+w7_exp_07,BERT,bert-base-uncased,question_answering,full_finetune,2e-05,2,8,exact_match_f1,Reference setting that updates all trainable weights.
+w7_exp_08,BERT,bert-base-uncased,question_answering,full_finetune,5e-05,2,8,exact_match_f1,Reference setting that updates all trainable weights.
+w7_exp_09,BERT,bert-base-uncased,question_answering,freeze_encoder_head_only,2e-05,2,8,exact_match_f1,Tests whether task head alone is enough on small data.
+w7_exp_10,BERT,bert-base-uncased,question_answering,freeze_encoder_head_only,5e-05,2,8,exact_match_f1,Tests whether task head alone is enough on small data.
+w7_exp_11,BERT,bert-base-uncased,question_answering,lora_adapter_optional,2e-05,2,8,exact_match_f1,Requires PEFT; compares adapter efficiency with full tuning.
+w7_exp_12,BERT,bert-base-uncased,question_answering,lora_adapter_optional,5e-05,2,8,exact_match_f1,Requires PEFT; compares adapter efficiency with full tuning.
+w7_exp_13,RoBERTa,roberta-base,text_classification,full_finetune,2e-05,2,8,macro_f1,Reference setting that updates all trainable weights.
+w7_exp_14,RoBERTa,roberta-base,text_classification,full_finetune,5e-05,2,8,macro_f1,Reference setting that updates all trainable weights.
+w7_exp_15,RoBERTa,roberta-base,text_classification,freeze_encoder_head_only,2e-05,2,8,macro_f1,Tests whether task head alone is enough on small data.
+w7_exp_16,RoBERTa,roberta-base,text_classification,freeze_encoder_head_only,5e-05,2,8,macro_f1,Tests whether task head alone is enough on small data.
+w7_exp_17,RoBERTa,roberta-base,text_classification,lora_adapter_optional,2e-05,2,8,macro_f1,Requires PEFT; compares adapter efficiency with full tuning.
+w7_exp_18,RoBERTa,roberta-base,text_classification,lora_adapter_optional,5e-05,2,8,macro_f1,Requires PEFT; compares adapter efficiency with full tuning.
+w7_exp_19,RoBERTa,roberta-base,question_answering,full_finetune,2e-05,2,8,exact_match_f1,Reference setting that updates all trainable weights.
+w7_exp_20,RoBERTa,roberta-base,question_answering,full_finetune,5e-05,2,8,exact_match_f1,Reference setting that updates all trainable weights.
+w7_exp_21,RoBERTa,roberta-base,question_answering,freeze_encoder_head_only,2e-05,2,8,exact_match_f1,Tests whether task head alone is enough on small data.
+w7_exp_22,RoBERTa,roberta-base,question_answering,freeze_encoder_head_only,5e-05,2,8,exact_match_f1,Tests whether task head alone is enough on small data.
+w7_exp_23,RoBERTa,roberta-base,question_answering,lora_adapter_optional,2e-05,2,8,exact_match_f1,Requires PEFT; compares adapter efficiency with full tuning.
+w7_exp_24,RoBERTa,roberta-base,question_answering,lora_adapter_optional,5e-05,2,8,exact_match_f1,Requires PEFT; compares adapter efficiency with full tuning.

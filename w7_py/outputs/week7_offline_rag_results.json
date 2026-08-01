@@ -1,0 +1,77 @@
+[
+  {
+    "query": "Why is LoRA parameter efficient?",
+    "prompt": "请仅根据给定证据回答问题；若证据不足，请说明无法确定。\n\n问题：Why is LoRA parameter efficient?\n\n证据：\n[1] LoRA (doc_lora_0, score=0.15128): LoRA freezes base model weights and trains low-rank adapter matrices. This reduces trainable parameters and storage cost while keeping most pretrained knowledge unchanged.\n[2] T5 text-to-text (doc_t5_1, score=0.126053): Task prefixes tell the model which behavior is expected.\n[3] Retrieval augmented generation (doc_rag_0, score=0.081209): RAG retrieves external documents before generation. It is useful when knowledge changes frequently or answers need source evidence.\n\n回答：",
+    "answer": "LoRA freezes base model weights and trains low-rank adapter matrices. 来源：LoRA。",
+    "hits": [
+      {
+        "chunk_id": "doc_lora_0",
+        "title": "LoRA",
+        "score": 0.15128,
+        "text": "LoRA freezes base model weights and trains low-rank adapter matrices. This reduces trainable parameters and storage cost while keeping most pretrained knowledge unchanged."
+      },
+      {
+        "chunk_id": "doc_t5_1",
+        "title": "T5 text-to-text",
+        "score": 0.126053,
+        "text": "Task prefixes tell the model which behavior is expected."
+      },
+      {
+        "chunk_id": "doc_rag_0",
+        "title": "Retrieval augmented generation",
+        "score": 0.081209,
+        "text": "RAG retrieves external documents before generation. It is useful when knowledge changes frequently or answers need source evidence."
+      }
+    ]
+  },
+  {
+    "query": "How does RAG use external knowledge?",
+    "prompt": "请仅根据给定证据回答问题；若证据不足，请说明无法确定。\n\n问题：How does RAG use external knowledge?\n\n证据：\n[1] Retrieval augmented generation (doc_rag_0, score=0.360656): RAG retrieves external documents before generation. It is useful when knowledge changes frequently or answers need source evidence.\n[2] LoRA (doc_lora_0, score=0.081023): LoRA freezes base model weights and trains low-rank adapter matrices. This reduces trainable parameters and storage cost while keeping most pretrained knowledge unchanged.\n[3] T5 text-to-text (doc_t5_0, score=0.0): T5 represents every NLP task as text-to-text learning. Classification labels, summaries, translations and answers are all written as target text.\n\n回答：",
+    "answer": "RAG retrieves external documents before generation. 来源：Retrieval augmented generation。",
+    "hits": [
+      {
+        "chunk_id": "doc_rag_0",
+        "title": "Retrieval augmented generation",
+        "score": 0.360656,
+        "text": "RAG retrieves external documents before generation. It is useful when knowledge changes frequently or answers need source evidence."
+      },
+      {
+        "chunk_id": "doc_lora_0",
+        "title": "LoRA",
+        "score": 0.081023,
+        "text": "LoRA freezes base model weights and trains low-rank adapter matrices. This reduces trainable parameters and storage cost while keeping most pretrained knowledge unchanged."
+      },
+      {
+        "chunk_id": "doc_t5_0",
+        "title": "T5 text-to-text",
+        "score": 0.0,
+        "text": "T5 represents every NLP task as text-to-text learning. Classification labels, summaries, translations and answers are all written as target text."
+      }
+    ]
+  },
+  {
+    "query": "What does instruction tuning teach a model?",
+    "prompt": "请仅根据给定证据回答问题；若证据不足，请说明无法确定。\n\n问题：What does instruction tuning teach a model?\n\n证据：\n[1] Instruction tuning (doc_instruction_0, score=0.432484): Instruction tuning uses supervised instruction-input-output examples. The purpose is to make a pretrained language model follow user requests, respect formats and answer in a more helpful way.\n[2] T5 text-to-text (doc_t5_1, score=0.067073): Task prefixes tell the model which behavior is expected.\n[3] Retrieval augmented generation (doc_rag_1, score=0.045816): The model receives retrieved chunks in the prompt and should answer based on those chunks.\n\n回答：",
+    "answer": "Instruction tuning uses supervised instruction-input-output examples. 来源：Instruction tuning。",
+    "hits": [
+      {
+        "chunk_id": "doc_instruction_0",
+        "title": "Instruction tuning",
+        "score": 0.432484,
+        "text": "Instruction tuning uses supervised instruction-input-output examples. The purpose is to make a pretrained language model follow user requests, respect formats and answer in a more helpful way."
+      },
+      {
+        "chunk_id": "doc_t5_1",
+        "title": "T5 text-to-text",
+        "score": 0.067073,
+        "text": "Task prefixes tell the model which behavior is expected."
+      },
+      {
+        "chunk_id": "doc_rag_1",
+        "title": "Retrieval augmented generation",
+        "score": 0.045816,
+        "text": "The model receives retrieved chunks in the prompt and should answer based on those chunks."
+      }
+    ]
+  }
+]

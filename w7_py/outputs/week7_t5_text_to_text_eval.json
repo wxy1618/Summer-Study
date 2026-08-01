@@ -1,0 +1,42 @@
+[
+  {
+    "task_name": "sentiment",
+    "input_text": "sst2 sentence: The lecture makes parameter efficient fine tuning clear.",
+    "target_text": "positive",
+    "prediction": "positive",
+    "exact_match": 1.0,
+    "token_f1": 1.0
+  },
+  {
+    "task_name": "sentiment",
+    "input_text": "sst2 sentence: The experiment result is unstable and hard to reproduce.",
+    "target_text": "negative",
+    "prediction": "negative",
+    "exact_match": 1.0,
+    "token_f1": 1.0
+  },
+  {
+    "task_name": "summarization",
+    "input_text": "summarize: Retrieval augmented generation first searches external documents and then asks a language model to answer with grounded evidence.",
+    "target_text": "RAG answers questions with retrieved evidence.",
+    "prediction": "RAG answers questions with retrieved evidence.",
+    "exact_match": 1.0,
+    "token_f1": 1.0
+  },
+  {
+    "task_name": "question_answering",
+    "input_text": "question: What does LoRA train? context: LoRA freezes the base model weights and trains low-rank adapter matrices.",
+    "target_text": "low-rank adapter matrices",
+    "prediction": "low-rank adapter matrices",
+    "exact_match": 1.0,
+    "token_f1": 1.0
+  },
+  {
+    "task_name": "translation",
+    "input_text": "translate English to Chinese: Instruction tuning teaches a model to follow user requests.",
+    "target_text": "指令微调让模型学习遵循用户请求。",
+    "prediction": "指令微调让模型学习遵循用户请求。",
+    "exact_match": 1.0,
+    "token_f1": 1.0
+  }
+]

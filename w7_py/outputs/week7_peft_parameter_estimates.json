@@ -1,0 +1,45 @@
+{
+  "model_spec": {
+    "num_layers": 12,
+    "hidden_size": 768,
+    "intermediate_size": 3072,
+    "vocab_size": 30522
+  },
+  "estimates": [
+    {
+      "method": "Full fine-tuning",
+      "trainable_parameters": 108375552,
+      "percent_of_full": 100.0,
+      "fp16_megabytes": 206.71,
+      "note": "Update all model weights."
+    },
+    {
+      "method": "Prompt Tuning",
+      "trainable_parameters": 49152,
+      "percent_of_full": 0.045353,
+      "fp16_megabytes": 0.094,
+      "note": "Train input soft prompt only."
+    },
+    {
+      "method": "P-Tuning v2",
+      "trainable_parameters": 1179648,
+      "percent_of_full": 1.088482,
+      "fp16_megabytes": 2.25,
+      "note": "Train deep prompts across layers."
+    },
+    {
+      "method": "LoRA q/v",
+      "trainable_parameters": 294912,
+      "percent_of_full": 0.27212,
+      "fp16_megabytes": 0.562,
+      "note": "Train rank-8 adapters on q and v."
+    },
+    {
+      "method": "LoRA q/k/v/o",
+      "trainable_parameters": 589824,
+      "percent_of_full": 0.544241,
+      "fp16_megabytes": 1.125,
+      "note": "Train rank-8 adapters on q/k/v/o."
+    }
+  ]
+}

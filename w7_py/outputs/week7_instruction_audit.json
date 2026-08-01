@@ -1,0 +1,44 @@
+[
+  {
+    "index": 0,
+    "category": "concept_explanation",
+    "is_valid": true,
+    "quality_score": 1.0,
+    "issues": []
+  },
+  {
+    "index": 1,
+    "category": "workflow_generation",
+    "is_valid": true,
+    "quality_score": 1.0,
+    "issues": []
+  },
+  {
+    "index": 2,
+    "category": "error_correction",
+    "is_valid": true,
+    "quality_score": 1.0,
+    "issues": []
+  },
+  {
+    "index": 3,
+    "category": "format_conversion",
+    "is_valid": true,
+    "quality_score": 1.0,
+    "issues": []
+  },
+  {
+    "index": 4,
+    "category": "concept_comparison",
+    "is_valid": true,
+    "quality_score": 1.0,
+    "issues": []
+  },
+  {
+    "index": 5,
+    "category": "workflow_generation",
+    "is_valid": true,
+    "quality_score": 1.0,
+    "issues": []
+  }
+]

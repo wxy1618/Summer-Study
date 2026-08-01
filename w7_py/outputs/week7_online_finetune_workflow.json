@@ -1,0 +1,145 @@
+{
+  "generated_at": "2026-08-01T04:01:33.187451+00:00",
+  "feedback": [
+    {
+      "identifier": "fb_001",
+      "instruction": "说明 RAG 与微调的区别。",
+      "accepted_answer": "RAG 在推理时检索外部知识，不改变模型参数；微调则通过训练数据更新模型权重或适配器，使模型长期改变行为。",
+      "source": "teacher_reviewed_weekly_note",
+      "risk_level": "low"
+    },
+    {
+      "identifier": "fb_002",
+      "instruction": "解释 LoRA 中低秩矩阵的作用。",
+      "accepted_answer": "低秩矩阵用于近似任务相关的权重增量，使模型只训练少量新增参数即可适配下游任务。",
+      "source": "experiment_report",
+      "risk_level": "low"
+    },
+    {
+      "identifier": "fb_003",
+      "instruction": "给出某私有数据集的全部样本。",
+      "accepted_answer": "该请求涉及潜在隐私数据，不能直接输出。",
+      "source": "safety_feedback",
+      "risk_level": "medium"
+    }
+  ],
+  "accepted_feedback": [
+    {
+      "identifier": "fb_001",
+      "instruction": "说明 RAG 与微调的区别。",
+      "accepted_answer": "RAG 在推理时检索外部知识，不改变模型参数；微调则通过训练数据更新模型权重或适配器，使模型长期改变行为。",
+      "source": "teacher_reviewed_weekly_note",
+      "risk_level": "low"
+    },
+    {
+      "identifier": "fb_002",
+      "instruction": "解释 LoRA 中低秩矩阵的作用。",
+      "accepted_answer": "低秩矩阵用于近似任务相关的权重增量，使模型只训练少量新增参数即可适配下游任务。",
+      "source": "experiment_report",
+      "risk_level": "low"
+    }
+  ],
+  "audit_rows": [
+    {
+      "identifier": "fb_001",
+      "passed": true,
+      "reasons": [],
+      "risk_level": "low",
+      "source": "teacher_reviewed_weekly_note"
+    },
+    {
+      "identifier": "fb_002",
+      "passed": true,
+      "reasons": [],
+      "risk_level": "low",
+      "source": "experiment_report"
+    },
+    {
+      "identifier": "fb_003",
+      "passed": false,
+      "reasons": [
+        "answer_too_short"
+      ],
+      "risk_level": "medium",
+      "source": "safety_feedback"
+    }
+  ],
+  "workflow_steps": [
+    {
+      "step_order": 1,
+      "name": "data_intake",
+      "owner": "student",
+      "action": "Collect user feedback and teacher-reviewed corrections.",
+      "artifact": "raw_feedback.jsonl"
+    },
+    {
+      "step_order": 2,
+      "name": "data_audit",
+      "owner": "student_and_reviewer",
+      "action": "Remove duplicates, unsafe content, and unsupported claims.",
+      "artifact": "feedback_audit_report.json"
+    },
+    {
+      "step_order": 3,
+      "name": "adapter_training",
+      "owner": "student",
+      "action": "Train a LoRA adapter or other PEFT module on accepted data.",
+      "artifact": "adapter_checkpoint/"
+    },
+    {
+      "step_order": 4,
+      "name": "offline_evaluation",
+      "owner": "student",
+      "action": "Evaluate task accuracy, refusal behavior, and regressions.",
+      "artifact": "evaluation_metrics.json"
+    },
+    {
+      "step_order": 5,
+      "name": "staged_release",
+      "owner": "reviewer",
+      "action": "Release only if all gates pass; otherwise keep baseline.",
+      "artifact": "release_decision.md"
+    },
+    {
+      "step_order": 6,
+      "name": "monitoring_and_rollback",
+      "owner": "maintainer",
+      "action": "Monitor online feedback and rollback on quality degradation.",
+      "artifact": "monitoring_log.jsonl"
+    }
+  ],
+  "gate_checks": [
+    {
+      "name": "accepted_training_examples",
+      "threshold": ">= 2 audited examples",
+      "observed": "2",
+      "passed": true
+    },
+    {
+      "name": "heldout_accuracy",
+      "threshold": ">= baseline accuracy",
+      "observed": "not_run_environment_not_configured",
+      "passed": false
+    },
+    {
+      "name": "safety_regression",
+      "threshold": "no new unsafe behavior in manual checks",
+      "observed": "pending_manual_review",
+      "passed": false
+    },
+    {
+      "name": "rollback_plan",
+      "threshold": "baseline checkpoint and adapter version are recorded",
+      "observed": "recorded_in_workflow",
+      "passed": true
+    }
+  ],
+  "release_decision": {
+    "release_allowed": false,
+    "failed_gates": [
+      "heldout_accuracy",
+      "safety_regression"
+    ],
+    "decision": "hold_for_evaluation"
+  }
+}
