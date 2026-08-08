@@ -1,0 +1,135 @@
+{
+  "mode": "standard_library_tfidf_dryrun",
+  "metrics": {
+    "recall_at_3": 1.0,
+    "mrr": 1.0
+  },
+  "records": [
+    {
+      "query": {
+        "query_id": "q1",
+        "text": "How to evaluate a semantic retrieval ranking?",
+        "relevant_doc_ids": [
+          "doc_semantic_search"
+        ]
+      },
+      "ranking": [
+        {
+          "rank": 1,
+          "doc_id": "doc_semantic_search",
+          "title": "Semantic Search",
+          "score": 0.258694
+        },
+        {
+          "rank": 2,
+          "doc_id": "doc_sentiment",
+          "title": "Sentiment Analysis",
+          "score": 0.165893
+        },
+        {
+          "rank": 3,
+          "doc_id": "doc_explainability",
+          "title": "Explainability",
+          "score": 0.086143
+        }
+      ],
+      "hit": true
+    },
+    {
+      "query": {
+        "query_id": "q2",
+        "text": "Which task uses OCR tokens and page layout?",
+        "relevant_doc_ids": [
+          "doc_doc_vqa"
+        ]
+      },
+      "ranking": [
+        {
+          "rank": 1,
+          "doc_id": "doc_doc_vqa",
+          "title": "Document VQA",
+          "score": 0.372564
+        },
+        {
+          "rank": 2,
+          "doc_id": "doc_semantic_search",
+          "title": "Semantic Search",
+          "score": 0.055183
+        },
+        {
+          "rank": 3,
+          "doc_id": "doc_sentiment",
+          "title": "Sentiment Analysis",
+          "score": 0.04287
+        }
+      ],
+      "hit": true
+    },
+    {
+      "query": {
+        "query_id": "q3",
+        "text": "What metrics are recorded for polarity classification?",
+        "relevant_doc_ids": [
+          "doc_sentiment"
+        ]
+      },
+      "ranking": [
+        {
+          "rank": 1,
+          "doc_id": "doc_sentiment",
+          "title": "Sentiment Analysis",
+          "score": 0.136076
+        },
+        {
+          "rank": 2,
+          "doc_id": "doc_semantic_search",
+          "title": "Semantic Search",
+          "score": 0.0
+        },
+        {
+          "rank": 3,
+          "doc_id": "doc_doc_vqa",
+          "title": "Document VQA",
+          "score": 0.0
+        }
+      ],
+      "hit": true
+    },
+    {
+      "query": {
+        "query_id": "q4",
+        "text": "How can an NLP model be checked for privacy and bias?",
+        "relevant_doc_ids": [
+          "doc_ethics"
+        ]
+      },
+      "ranking": [
+        {
+          "rank": 1,
+          "doc_id": "doc_ethics",
+          "title": "Ethics",
+          "score": 0.349952
+        },
+        {
+          "rank": 2,
+          "doc_id": "doc_explainability",
+          "title": "Explainability",
+          "score": 0.105645
+        },
+        {
+          "rank": 3,
+          "doc_id": "doc_sentiment",
+          "title": "Sentiment Analysis",
+          "score": 0.10096
+        }
+      ],
+      "hit": true
+    }
+  ],
+  "paddlenlp_environment": {
+    "paddle_available": false,
+    "paddlenlp_available": false,
+    "paddle_error": "No module named 'paddle'",
+    "paddlenlp_error": "No module named 'paddlenlp'"
+  }
+}

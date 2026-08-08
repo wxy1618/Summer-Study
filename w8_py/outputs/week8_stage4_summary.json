@@ -1,0 +1,38 @@
+[
+  {
+    "artifact_name": "week8_doc_vqa_workflow.json",
+    "task_name": "document_vqa",
+    "headline_metric": "{'accuracy': 1.0}",
+    "note": "Records OCR tokens, evidence boxes, answers and confidence."
+  },
+  {
+    "artifact_name": "week8_ethics_risk_audit.json",
+    "task_name": "ethics_audit",
+    "headline_metric": "{'release_allowed': False, 'max_risk_score': 15, 'high_risk_count': 2, 'decision_note': 'Hold release until high-risk items have stronger mitigation evidence and reviewer approval.'}",
+    "note": "Records release gates for social and ethical risks."
+  },
+  {
+    "artifact_name": "week8_knowledge_augmentation_concept_map.json",
+    "task_name": "knowledge_augmentation",
+    "headline_metric": "methods=5, metrics=5",
+    "note": "Records methods, metrics and conceptual relations."
+  },
+  {
+    "artifact_name": "week8_model_explainability_analysis.json",
+    "task_name": "model_explainability",
+    "headline_metric": "counterfactual_changed=2/3",
+    "note": "Records token contributions, deletion tests and counterfactuals."
+  },
+  {
+    "artifact_name": "week8_semantic_search_dryrun.json",
+    "task_name": "semantic_search",
+    "headline_metric": "{'recall_at_3': 1.0, 'mrr': 1.0}",
+    "note": "Records retrieval ranking quality and PaddleNLP availability."
+  },
+  {
+    "artifact_name": "week8_sentiment_analysis_dryrun.json",
+    "task_name": "sentiment_analysis",
+    "headline_metric": "{'accuracy': 1.0, 'precision_positive': 1.0, 'recall_positive': 1.0, 'f1_positive': 1.0}",
+    "note": "Records dry-run sentiment predictions and PaddleNLP plan."
+  }
+]

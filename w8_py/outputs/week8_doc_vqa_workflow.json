@@ -1,0 +1,216 @@
+{
+  "mode": "standard_library_doc_vqa_dryrun",
+  "ocr_tokens": [
+    {
+      "token_id": "t01",
+      "text": "Invoice",
+      "bbox": [
+        40,
+        30,
+        120,
+        55
+      ]
+    },
+    {
+      "token_id": "t02",
+      "text": "No.",
+      "bbox": [
+        40,
+        75,
+        70,
+        95
+      ]
+    },
+    {
+      "token_id": "t03",
+      "text": "A-2026-08",
+      "bbox": [
+        85,
+        75,
+        170,
+        95
+      ]
+    },
+    {
+      "token_id": "t04",
+      "text": "Vendor",
+      "bbox": [
+        40,
+        120,
+        90,
+        140
+      ]
+    },
+    {
+      "token_id": "t05",
+      "text": "PaddleNLP",
+      "bbox": [
+        120,
+        120,
+        215,
+        140
+      ]
+    },
+    {
+      "token_id": "t06",
+      "text": "Due",
+      "bbox": [
+        40,
+        165,
+        70,
+        185
+      ]
+    },
+    {
+      "token_id": "t07",
+      "text": "Date",
+      "bbox": [
+        75,
+        165,
+        115,
+        185
+      ]
+    },
+    {
+      "token_id": "t08",
+      "text": "2026-08-31",
+      "bbox": [
+        130,
+        165,
+        225,
+        185
+      ]
+    },
+    {
+      "token_id": "t09",
+      "text": "Total",
+      "bbox": [
+        40,
+        220,
+        90,
+        240
+      ]
+    },
+    {
+      "token_id": "t10",
+      "text": "1280",
+      "bbox": [
+        130,
+        220,
+        175,
+        240
+      ]
+    },
+    {
+      "token_id": "t11",
+      "text": "CNY",
+      "bbox": [
+        180,
+        220,
+        215,
+        240
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "q_invoice_id",
+      "question": "What is the invoice number?",
+      "expected_answer": "A-2026-08"
+    },
+    {
+      "question_id": "q_vendor",
+      "question": "Who is the vendor?",
+      "expected_answer": "PaddleNLP"
+    },
+    {
+      "question_id": "q_due_date",
+      "question": "What is the due date?",
+      "expected_answer": "2026-08-31"
+    },
+    {
+      "question_id": "q_total",
+      "question": "What is the total amount?",
+      "expected_answer": "1280 CNY"
+    }
+  ],
+  "predictions": [
+    {
+      "question_id": "q_invoice_id",
+      "answer": "A-2026-08",
+      "evidence_token_ids": [
+        "t03"
+      ],
+      "evidence_bbox": [
+        85,
+        75,
+        170,
+        95
+      ],
+      "confidence": 0.92,
+      "correct": true
+    },
+    {
+      "question_id": "q_vendor",
+      "answer": "PaddleNLP",
+      "evidence_token_ids": [
+        "t05"
+      ],
+      "evidence_bbox": [
+        120,
+        120,
+        215,
+        140
+      ],
+      "confidence": 0.92,
+      "correct": true
+    },
+    {
+      "question_id": "q_due_date",
+      "answer": "2026-08-31",
+      "evidence_token_ids": [
+        "t08"
+      ],
+      "evidence_bbox": [
+        130,
+        165,
+        225,
+        185
+      ],
+      "confidence": 0.92,
+      "correct": true
+    },
+    {
+      "question_id": "q_total",
+      "answer": "1280 CNY",
+      "evidence_token_ids": [
+        "t10",
+        "t11"
+      ],
+      "evidence_bbox": [
+        130,
+        220,
+        215,
+        240
+      ],
+      "confidence": 0.92,
+      "correct": true
+    }
+  ],
+  "metrics": {
+    "accuracy": 1.0
+  },
+  "taskflow_plan": {
+    "paddlenlp_mapping": [
+      "Use OCR or document_intelligence pipeline to obtain tokens.",
+      "Keep token text, bounding boxes, and page identifiers.",
+      "Use DocVQA or document intelligence model to score answer spans.",
+      "Store answer text, evidence region, confidence, and error cases."
+    ],
+    "environment_policy": "This script does not install PaddlePaddle or PaddleNLP. Real Taskflow calls should be run only in an existing environment."
+  },
+  "paddlenlp_environment": {
+    "paddlenlp_available": false,
+    "paddlenlp_error": "No module named 'paddlenlp'"
+  }
+}

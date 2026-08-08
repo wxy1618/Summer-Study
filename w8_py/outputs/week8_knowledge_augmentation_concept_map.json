@@ -1,0 +1,93 @@
+{
+  "methods": [
+    {
+      "name": "domain_adaptive_pretraining",
+      "stage": "pretraining",
+      "knowledge_type": "parametric",
+      "benefit": "Absorbs domain language patterns and frequent facts.",
+      "limitation": "Expensive to update and difficult to cite."
+    },
+    {
+      "name": "supervised_instruction_tuning",
+      "stage": "fine_tuning",
+      "knowledge_type": "parametric_behavior",
+      "benefit": "Teaches the model task format and response style.",
+      "limitation": "May overfit small or noisy instruction data."
+    },
+    {
+      "name": "retrieval_augmented_generation",
+      "stage": "inference",
+      "knowledge_type": "non_parametric",
+      "benefit": "Injects fresh and auditable external evidence.",
+      "limitation": "Answer quality is bounded by retrieval quality."
+    },
+    {
+      "name": "knowledge_graph_grounding",
+      "stage": "inference_or_training",
+      "knowledge_type": "structured_external",
+      "benefit": "Provides explicit entities, relations, and paths.",
+      "limitation": "Coverage and schema construction can be costly."
+    },
+    {
+      "name": "tool_or_database_calling",
+      "stage": "inference",
+      "knowledge_type": "external_tool",
+      "benefit": "Allows models to query authoritative structured sources.",
+      "limitation": "Requires robust tool routing and permission control."
+    }
+  ],
+  "metrics": [
+    {
+      "name": "Recall@K",
+      "target_stage": "retrieval",
+      "interpretation": "Measures whether relevant evidence appears in top-K."
+    },
+    {
+      "name": "MRR",
+      "target_stage": "retrieval",
+      "interpretation": "Rewards relevant evidence being ranked earlier."
+    },
+    {
+      "name": "Faithfulness",
+      "target_stage": "generation",
+      "interpretation": "Checks whether the answer is supported by evidence."
+    },
+    {
+      "name": "Citation Accuracy",
+      "target_stage": "generation",
+      "interpretation": "Checks whether cited sources truly support claims."
+    },
+    {
+      "name": "Risk Gate Pass Rate",
+      "target_stage": "governance",
+      "interpretation": "Checks whether data, safety, and rollback gates pass."
+    }
+  ],
+  "edges": [
+    {
+      "source": "retrieval_augmented_generation",
+      "target": "Recall@K",
+      "relation": "retrieval quality must be measured before judging answers"
+    },
+    {
+      "source": "retrieval_augmented_generation",
+      "target": "Faithfulness",
+      "relation": "generation should be constrained by retrieved evidence"
+    },
+    {
+      "source": "domain_adaptive_pretraining",
+      "target": "supervised_instruction_tuning",
+      "relation": "domain knowledge can precede task-specific behavior tuning"
+    },
+    {
+      "source": "knowledge_graph_grounding",
+      "target": "Citation Accuracy",
+      "relation": "explicit sources make answer verification easier"
+    },
+    {
+      "source": "tool_or_database_calling",
+      "target": "Risk Gate Pass Rate",
+      "relation": "external actions require permission and monitoring gates"
+    }
+  ]
+}

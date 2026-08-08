@@ -1,0 +1,49 @@
+[
+  {
+    "text": "The semantic search demo is clear and useful.",
+    "prediction": "positive",
+    "score": 2,
+    "token_contributions": {
+      "clear": 1,
+      "useful": 1
+    },
+    "deletion_effects": {
+      "clear": -1,
+      "useful": -1
+    },
+    "counterfactual_text": "the semantic search demo is confusing and poorly",
+    "counterfactual_prediction": "negative"
+  },
+  {
+    "text": "The retrieval result is confusing and poorly ranked.",
+    "prediction": "negative",
+    "score": -2,
+    "token_contributions": {
+      "confusing": -1,
+      "poorly": -1
+    },
+    "deletion_effects": {
+      "confusing": 1,
+      "poorly": 1
+    },
+    "counterfactual_text": "the retrieval result is clear and useful ranked",
+    "counterfactual_prediction": "positive"
+  },
+  {
+    "text": "The ethical audit is helpful but the model ignores privacy.",
+    "prediction": "negative",
+    "score": -1,
+    "token_contributions": {
+      "helpful": 1,
+      "ignores": -1,
+      "privacy": -1
+    },
+    "deletion_effects": {
+      "helpful": -1,
+      "ignores": 1,
+      "privacy": 1
+    },
+    "counterfactual_text": "the ethical audit is ignores but the model helpful privacy",
+    "counterfactual_prediction": "negative"
+  }
+]

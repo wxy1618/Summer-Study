@@ -1,0 +1,8 @@
+area,description,severity,likelihood,mitigation,owner,risk_score
+data_provenance,Training or evaluation samples may lack clear source notes.,3,3,"Record dataset origin, license, collection date and scope.",student,9
+bias_and_fairness,Sentiment model may behave differently across groups.,4,3,Create paired test cases and compare subgroup error rates.,student_reviewer,12
+privacy,"Document QA inputs may contain names, IDs or invoices.",5,3,Mask personal identifiers and restrict raw document access.,data_owner,15
+misinformation,QA system may answer without sufficient evidence.,4,2,Require evidence spans and allow abstention on weak retrieval.,model_developer,8
+copyright,External documents may have unclear redistribution rights.,3,2,Store source URLs and avoid redistributing restricted content.,project_owner,6
+explainability,Users may overtrust saliency or attention explanations.,3,3,"Label explanations as diagnostic aids, not causal proof.",model_developer,9
+deployment,No rollback plan may exist if online quality degrades.,4,2,"Record baseline version, adapter version and rollback trigger.",maintainer,8

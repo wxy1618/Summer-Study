@@ -1,0 +1,74 @@
+{
+  "threshold": 12,
+  "items": [
+    {
+      "area": "data_provenance",
+      "description": "Training or evaluation samples may lack clear source notes.",
+      "severity": 3,
+      "likelihood": 3,
+      "mitigation": "Record dataset origin, license, collection date and scope.",
+      "owner": "student",
+      "risk_score": 9
+    },
+    {
+      "area": "bias_and_fairness",
+      "description": "Sentiment model may behave differently across groups.",
+      "severity": 4,
+      "likelihood": 3,
+      "mitigation": "Create paired test cases and compare subgroup error rates.",
+      "owner": "student_reviewer",
+      "risk_score": 12
+    },
+    {
+      "area": "privacy",
+      "description": "Document QA inputs may contain names, IDs or invoices.",
+      "severity": 5,
+      "likelihood": 3,
+      "mitigation": "Mask personal identifiers and restrict raw document access.",
+      "owner": "data_owner",
+      "risk_score": 15
+    },
+    {
+      "area": "misinformation",
+      "description": "QA system may answer without sufficient evidence.",
+      "severity": 4,
+      "likelihood": 2,
+      "mitigation": "Require evidence spans and allow abstention on weak retrieval.",
+      "owner": "model_developer",
+      "risk_score": 8
+    },
+    {
+      "area": "copyright",
+      "description": "External documents may have unclear redistribution rights.",
+      "severity": 3,
+      "likelihood": 2,
+      "mitigation": "Store source URLs and avoid redistributing restricted content.",
+      "owner": "project_owner",
+      "risk_score": 6
+    },
+    {
+      "area": "explainability",
+      "description": "Users may overtrust saliency or attention explanations.",
+      "severity": 3,
+      "likelihood": 3,
+      "mitigation": "Label explanations as diagnostic aids, not causal proof.",
+      "owner": "model_developer",
+      "risk_score": 9
+    },
+    {
+      "area": "deployment",
+      "description": "No rollback plan may exist if online quality degrades.",
+      "severity": 4,
+      "likelihood": 2,
+      "mitigation": "Record baseline version, adapter version and rollback trigger.",
+      "owner": "maintainer",
+      "risk_score": 8
+    }
+  ],
+  "decision": {
+    "release_allowed": false,
+    "max_risk_score": 15,
+    "high_risk_count": 2,
+    "decision_note": "Hold release until high-risk items have stronger mitigation evidence and reviewer approval."
+  }
+}

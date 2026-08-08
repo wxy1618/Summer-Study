@@ -1,0 +1,150 @@
+{
+  "mode": "standard_library_lexicon_dryrun",
+  "dataset": [
+    {
+      "text": "The semantic search demo is clear and useful.",
+      "label": "positive"
+    },
+    {
+      "text": "The DocVQA pipeline feels reliable after evidence checks.",
+      "label": "positive"
+    },
+    {
+      "text": "The sentiment model is unstable on short comments.",
+      "label": "negative"
+    },
+    {
+      "text": "The explanation report is helpful for error analysis.",
+      "label": "positive"
+    },
+    {
+      "text": "The retrieval result is confusing and poorly ranked.",
+      "label": "negative"
+    },
+    {
+      "text": "The ethical audit improves the deployment plan.",
+      "label": "positive"
+    },
+    {
+      "text": "The model ignores privacy risks and fails the review.",
+      "label": "negative"
+    },
+    {
+      "text": "The PaddleNLP practice makes fine-tuning steps concrete.",
+      "label": "positive"
+    }
+  ],
+  "predictions": [
+    {
+      "text": "The semantic search demo is clear and useful.",
+      "gold_label": "positive",
+      "predicted_label": "positive",
+      "score": 2,
+      "evidence_words": [
+        "clear",
+        "useful"
+      ],
+      "correct": true
+    },
+    {
+      "text": "The DocVQA pipeline feels reliable after evidence checks.",
+      "gold_label": "positive",
+      "predicted_label": "positive",
+      "score": 1,
+      "evidence_words": [
+        "reliable"
+      ],
+      "correct": true
+    },
+    {
+      "text": "The sentiment model is unstable on short comments.",
+      "gold_label": "negative",
+      "predicted_label": "negative",
+      "score": -1,
+      "evidence_words": [
+        "unstable"
+      ],
+      "correct": true
+    },
+    {
+      "text": "The explanation report is helpful for error analysis.",
+      "gold_label": "positive",
+      "predicted_label": "positive",
+      "score": 1,
+      "evidence_words": [
+        "helpful"
+      ],
+      "correct": true
+    },
+    {
+      "text": "The retrieval result is confusing and poorly ranked.",
+      "gold_label": "negative",
+      "predicted_label": "negative",
+      "score": -2,
+      "evidence_words": [
+        "confusing",
+        "poorly"
+      ],
+      "correct": true
+    },
+    {
+      "text": "The ethical audit improves the deployment plan.",
+      "gold_label": "positive",
+      "predicted_label": "positive",
+      "score": 1,
+      "evidence_words": [
+        "improves"
+      ],
+      "correct": true
+    },
+    {
+      "text": "The model ignores privacy risks and fails the review.",
+      "gold_label": "negative",
+      "predicted_label": "negative",
+      "score": -3,
+      "evidence_words": [
+        "ignores",
+        "risks",
+        "fails"
+      ],
+      "correct": true
+    },
+    {
+      "text": "The PaddleNLP practice makes fine-tuning steps concrete.",
+      "gold_label": "positive",
+      "predicted_label": "positive",
+      "score": 1,
+      "evidence_words": [
+        "concrete"
+      ],
+      "correct": true
+    }
+  ],
+  "metrics": {
+    "accuracy": 1.0,
+    "precision_positive": 1.0,
+    "recall_positive": 1.0,
+    "f1_positive": 1.0
+  },
+  "errors": [],
+  "paddlenlp_plan": {
+    "dataset_fields": [
+      "text",
+      "label"
+    ],
+    "suggested_pipeline": [
+      "Load PaddleNLP tokenizer for a sentiment checkpoint.",
+      "Map text examples into input_ids and token_type_ids.",
+      "Use a pretrained sequence classification model.",
+      "Train on train split and evaluate on validation split.",
+      "Record accuracy, precision, recall, F1 and error examples."
+    ],
+    "environment_policy": "Run this replacement only in an existing PaddlePaddle/PaddleNLP environment. This script does not install or configure packages."
+  },
+  "paddlenlp_environment": {
+    "paddle_available": false,
+    "paddlenlp_available": false,
+    "paddle_error": "No module named 'paddle'",
+    "paddlenlp_error": "No module named 'paddlenlp'"
+  }
+}
